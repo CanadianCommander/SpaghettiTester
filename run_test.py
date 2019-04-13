@@ -1,10 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
+from pkg.moduleUtil import get_test_module
 import argparse
 import sys
 import importlib
 
-TEST_MODULE_CLASS_NAME="TestModule"
 GECKO_DRIVER_PATH=r'vendor/geckodriver'
 
 def parse_cli_args():
@@ -20,11 +20,6 @@ def build_web_driver():
     options.headless = True
     driver = webdriver.Firefox(options=options, executable_path=GECKO_DRIVER_PATH)
     return driver
-
-def get_test_module(moduleName):
-    module = importlib.import_module(moduleName)
-    testModule = getattr(module, TEST_MODULE_CLASS_NAME)
-    return testModule()
 
 if __name__ == "__main__":
     cliArguements = parse_cli_args()
