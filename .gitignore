@@ -1,2 +1,29 @@
 __pycache__
 geckodriver.log
+
+# ---- rails stuff -----
+# Ignore bundler config.
+/web/webInterface/.bundle
+
+# Ignore the default SQLite database.
+/web/webInterface/db/*.sqlite3
+/web/webInterface/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/web/webInterface/log/*
+/web/webInterface/tmp/*
+!/web/webInterface/log/.keep
+!/web/webInterface/tmp/.keep
+
+# Ignore uploaded files in development
+/web/webInterface/storage/*
+!/web/webInterface/storage/.keep
+
+/web/webInterface/node_modules
+/web/webInterface/yarn-error.log
+
+/web/webInterface/public/assets
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/web/webInterface/config/master.key

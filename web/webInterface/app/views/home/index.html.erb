@@ -1,0 +1,52 @@
+<h1> Spaghetti Tester</h1>
+<h3> a web ui testing system </h3>
+
+<div class="container content_area">
+  <h2> Start a Test </h2>
+  <hr/>
+  <form style="display:flex; flex-wrap: wrap;" action="/todo.html" method="post">
+    <div class="form-column">
+      <!-- test url -->
+      <div class="form-group">
+        <label for="testURL">Test Url</label>
+        <input name="url" type="url" id="testURL" class="form-control" required placeholder="https://www.example.com"/>
+        <small class="form-text text-muted"> The target website for the test</small>
+      </div>
+
+      <!-- additional test arguments -->
+      <div class="form-group">
+        <label for="testArguments">Test Arguments</label>
+        <hr/>
+        <div id="argument-list">
+          <!-- as the user hits the "+" button arguments are added here -->
+        </div>
+        <!-- template for arguments. a copy of this is placed in argument-list when user clicks + -->
+        <div id="argument-group-source" class="argument-group" style="display:none">
+          <input name="keys" type="text" class="form-control" placeholder="key"/>
+          <input name="vals" type="text" class="form-control" placeholder="arg"/>
+          <button type="button" class="btn btn-danger"
+          style="padding-top: 3px; padding-bottom: 3px; margin:auto;" onclick="removeTestArgument(event.target);">
+            <i class="fa fa-minus"></i>
+          </button>
+        </div>
+        <button type="button" id="addArgument" class="btn btn-success"
+        style="margin: auto; display:block; margin-top: 5px;" onclick="addTestArgument();">
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+    </div>
+    <div class="form-column">
+      <!-- test selection -->
+      <div class="form-group">
+        <label for="testModuleSelect">Select Test Module</label>
+        <select name="testModule" class="form-control" id="testModuleSelect" size="3">
+          <% @testModuleNames.each do |testModule|%>
+            <option> <%=testModule%> </option>
+          <% end %>
+        </select>
+      </div>
+
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin:auto;">Start!</button>
+  </form>
+</div>
