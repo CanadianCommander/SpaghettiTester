@@ -2,43 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  background-image: url("Touched_by_His_Noodly_Appendage_HD.jpg");
-  background-position: right 15% top 0%;
-  background-size: 250%;
-  font-family: monospace;
-}
-
-h1 {
-  font-family: monospace;
-  text-align: right;
-  font-size: 25pt;
-}
-
-h3 {
-  text-align: right;
-  font-size: 14pt;
-  padding-right: 10px;
-  font-style: italic;
-}
-
-hr {
-  border-color: darkgrey;
-  margin-top: 5px;
-}
-
-.content_area {
-  margin-top: 20%;
-  background-color: #ffffffbb;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.container h2 {
-  text-align: center;
-  padding-top: 0.5rem;
-}
-
 .form-column {
   display: flex;
   flex-wrap: wrap;

@@ -3,32 +3,32 @@ geckodriver.log
 
 # ---- rails stuff -----
 # Ignore bundler config.
-/web/webInterface/.bundle
+/web/.bundle
 
 # Ignore the default SQLite database.
-/web/webInterface/db/*.sqlite3
-/web/webInterface/db/*.sqlite3-journal
+/web/db/*.sqlite3
+/web/db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/web/webInterface/log/*
-/web/webInterface/tmp/*
-!/web/webInterface/log/.keep
-!/web/webInterface/tmp/.keep
+/web/log/*
+/web/tmp/*
+!/web/log/.keep
+!/web/tmp/.keep
 
 # Ignore uploaded files in development
-/web/webInterface/storage/*
-!/web/webInterface/storage/.keep
+/web/storage/*
+!/web/storage/.keep
 
 /web/webInterface/node_modules
-/web/webInterface/yarn-error.log
+/web/yarn-error.log
 
-/web/webInterface/public/assets
+/web/public/assets
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
-/web/webInterface/config/master.key
+/web/config/master.key
 
 # rails config
-/web/webInterface/config/settings.local.yml
-/web/webInterface/config/settings/*.local.yml
-/web/webInterface/config/environments/*.local.yml
+/web/config/settings.local.yml
+/web/config/settings/*.local.yml
+/web/config/environments/*.local.yml
