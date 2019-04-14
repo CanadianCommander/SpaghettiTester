@@ -22,11 +22,13 @@ def build_web_driver():
     return driver
 
 if __name__ == "__main__":
+    print("doing init....")
     cliArguements = parse_cli_args()
     try:
         webDriver = build_web_driver()
         webDriver.get(cliArguements.url)
         testModule = get_test_module(cliArguements.test)
+        print("doing test....")
         sys.exit(testModule.run(webDriver, cliArguements.url))
     except Exception as e:
         print("Error " + str(e))

@@ -3,7 +3,8 @@
 <div class="container content_area">
   <h2> Start a Test </h2>
   <hr/>
-  <form style="display:flex; flex-wrap: wrap;" action="/todo.html" method="post">
+  <form style="display:flex; flex-wrap: wrap;" action="/dotest.html" method="post">
+    <%= token_tag %>
     <div class="form-column">
       <!-- test url -->
       <div class="form-group">
@@ -38,7 +39,7 @@
       <!-- test selection -->
       <div class="form-group">
         <label for="testModuleSelect">Select Test Module</label>
-        <select name="testModule" class="form-control" id="testModuleSelect" size="3">
+        <select name="testModule" class="form-control" id="testModuleSelect" required size="3">
           <% testModuleList.each do |testModule|%>
             <option> <%=testModule%> </option>
           <% end %>
