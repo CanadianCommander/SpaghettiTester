@@ -27,3 +27,8 @@ geckodriver.log
 
 # Ignore master key for decrypting credentials and more.
 /web/webInterface/config/master.key
+
+# rails config
+/web/webInterface/config/settings.local.yml
+/web/webInterface/config/settings/*.local.yml
+/web/webInterface/config/environments/*.local.yml
