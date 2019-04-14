@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/index' => redirect('/')
 
   post '/dotest', to: 'home#dotest'
+  post '/updateTestStatus', to: "home#updateTestStatus"
 end

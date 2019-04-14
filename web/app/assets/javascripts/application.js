@@ -11,7 +11,6 @@
 // about supported directives.
 //
 
-
 //= require jquery3
 //= require bootstrap
 //= require popper
@@ -19,3 +18,12 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// bind CSRF token to all ajax requests
+$(document).ready(function (){
+  $.ajaxSetup({
+  headers: {
+    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+})

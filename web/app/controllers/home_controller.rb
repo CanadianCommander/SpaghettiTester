@@ -13,6 +13,30 @@ class HomeController < ApplicationController
 
   def dotest
     testInst = TestRunner.instance.runTest(params[:testModule], params[:url])
-    render "home/dotest", locals: params.merge({output: testInst.output})
+    render "home/dotest", locals: params.merge({
+      testUUID: testInst.uuid,
+      })
   end
+
+  def updateTestStatus
+    isComplete = TestRunner.instance.testComplete?(params[:uuid])
+    nextLine = ""
+    isSuccess = isComplete && TestRunner.instance.testSuccess?(params[:uuid])
+    if !isComplete
+      begin
+        nextLine = TestRunner.instance.getAvailableTestOutput(params[:uuid])
+      rescue EOFError => e
+        puts e.to_s
+      end
+    else
+      nextLine = TestRunner.instance.getAllTestOutput(params[:uuid])
+    end
+
+    render :json => {
+      complete: isComplete,
+      success: isSuccess,
+      line: nextLine
+    }
+  end
+
 end

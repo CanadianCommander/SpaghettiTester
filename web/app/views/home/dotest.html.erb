@@ -1,8 +1,10 @@
 <h1> Spaghetti Tester</h1>
 <h3> a web ui testing system </h3>
 
+<meta id="test-uuid" content=<%=testUUID%> />
+
 <div class="container content_area">
   <h2>Running Test [<%=testModule%>]</h2>
   <hr/>
-  <textarea class="test-output" readonly><%=output%></textarea>
+  <textarea id="test-output" readonly></textarea>
 </div>
